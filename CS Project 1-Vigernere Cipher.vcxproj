@@ -142,6 +142,9 @@
     <ClCompile Include="Alphabet.cpp" />
     <ClCompile Include="CS Project 1-Vigernere Cipher.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Alphabet.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
