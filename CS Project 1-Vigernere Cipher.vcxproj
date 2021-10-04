@@ -139,11 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Alphabet.cpp" />
+    <ClCompile Include="CryptAnalysis.cpp" />
     <ClCompile Include="CS Project 1-Vigernere Cipher.cpp" />
+    <ClCompile Include="LanguageLetters.cpp" />
+    <ClCompile Include="VigenereCrypt.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Alphabet.h" />
+    <ClInclude Include="CryptAnalysis.h" />
+    <ClInclude Include="LanguageLetters.h" />
+    <ClInclude Include="VigenereCrypt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\Downloads\nuDAim.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
