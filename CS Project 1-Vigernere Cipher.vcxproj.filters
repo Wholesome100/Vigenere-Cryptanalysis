@@ -46,5 +46,11 @@
     <Text Include="nuDAim.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="cleantext.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="textTest.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

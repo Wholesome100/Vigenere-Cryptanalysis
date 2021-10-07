@@ -150,8 +150,10 @@
     <ClInclude Include="VigenereCrypt.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="cleantext.txt" />
     <Text Include="nuDAim.txt" />
     <Text Include="output.txt" />
+    <Text Include="textTest.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

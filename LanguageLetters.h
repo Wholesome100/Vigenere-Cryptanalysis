@@ -2,9 +2,6 @@
 class LanguageLetters
 {
 public:
-	unsigned int SIZE;
-	char refArray[29];
-	int shiftArray[];
-
+	char refArray[29] = {};
 };
 
