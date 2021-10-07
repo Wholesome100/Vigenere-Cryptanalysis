@@ -2,11 +2,28 @@
 //
 
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 int main()
 {
-    cout << "Hello World!\n";
+
+/*fstream output;
+output.open("output.txt");
+output << "This is a test of writing to a file.";
+output.close();
+return 0;*/
+
+char c;
+
+ifstream input;
+input.open("nuDAim.txt");
+while (!input.eof())
+{
+	input.get(c);
+	cout << c;
+}
+input.close();
 }
 
 
