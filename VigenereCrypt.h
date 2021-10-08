@@ -8,8 +8,8 @@ public:
 	//string ifName;
 	//string ofName;
 
-	//void vigEncrypt()
-
+	void vigEncrypt(string key);
+	void vigDecrypt(string key);
 	void stripText(string dFile);
 };
 
