@@ -33,7 +33,7 @@ void VigenereCrypt::vigEncrypt(string key)
 {
 	char hold;
 	int writ, temp, loopOver=0;
-	int* keyRef = new int(key.length());
+	int* keyRef = new int[key.length()];
 
 	//int keyRef[5]={22,3,5,17,21};
 	for (int i = 0; i < key.length(); i++)
@@ -55,7 +55,7 @@ void VigenereCrypt::vigEncrypt(string key)
 		output.put(LanguageLetters().refArray[writ]);
 		loopOver++;
 	}
-
+	delete[] keyRef;
 	input.close();
 	output.close();
 }
