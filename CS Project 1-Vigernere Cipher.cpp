@@ -18,7 +18,8 @@ int main()
 	cin >> key;
 
 	VigenereCrypt().stripText(inputFile);
-	VigenereCrypt().vigEncrypt(key);
+	//VigenereCrypt().vigEncrypt(key);
+	VigenereCrypt().vigDecrypt(key);
 	cout << "\nCiphertext written to output.txt";
 }
 
