@@ -151,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="cleantext.txt" />
+    <Text Include="encryptedNUDAIM.txt" />
     <Text Include="nuDAim.txt" />
     <Text Include="output.txt" />
     <Text Include="textTest.txt" />

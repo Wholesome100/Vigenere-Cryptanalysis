@@ -7,7 +7,7 @@
 
 using namespace std;
 
-void CryptAnalysis::findFrequency(double* afreqArray)
+void CryptAnalysis::findFrequency(double* afreqArray, string fileName)
 {
 	char hold;
 	int charCount=0, temp;
@@ -19,7 +19,7 @@ void CryptAnalysis::findFrequency(double* afreqArray)
 	}
 
 	ifstream input;
-	input.open("cleantext.txt");
+	input.open(fileName);
 
 	while (!input.get(hold).eof())
 	{
@@ -39,3 +39,18 @@ void CryptAnalysis::findFrequency(double* afreqArray)
 	input.close();
 	delete[] freqStore;
 }
+
+double CryptAnalysis::calculateError(double* aFreqarray)
+{
+	double errorCalc=0;
+
+	for (int i = 0; i < 29; i++)
+	{
+		errorCalc += pow(aFreqarray[i] - CryptAnalysis().efreqArray[i], 2);
+	}
+
+	errorCalc = sqrt(errorCalc);
+	
+	return errorCalc;
+}
+

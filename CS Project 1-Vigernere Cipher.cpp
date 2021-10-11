@@ -24,17 +24,21 @@ int main()
 	cout << "\nCiphertext written to output.txt";*/
 
 	double charFrequencies[29];
+	double errorC;
 
 	cout << "Testing frequency analysis:\n";
-	VigenereCrypt().stripText("nuDAim.txt");
-	//VigenereCrypt().vigEncrypt("TACOS");
-	CryptAnalysis().findFrequency(charFrequencies);
+	VigenereCrypt().stripText("encryptedNUDAIM.txt");
+	//VigenereCrypt().vigEncrypt("TA");
+	VigenereCrypt().vigDecrypt("T");
+	CryptAnalysis().findFrequency(charFrequencies, "output.txt");
+	errorC=CryptAnalysis().calculateError(charFrequencies);
 
 	for (int i = 0; i < 29; i++)
 	{
 		cout << LanguageLetters().refArray[i] << ":";
 		cout << charFrequencies[i] << "\n";
 	}
+	cout << errorC;
 }
 
 

@@ -52,5 +52,8 @@
     <Text Include="textTest.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="encryptedNUDAIM.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
