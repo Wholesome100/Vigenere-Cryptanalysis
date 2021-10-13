@@ -55,5 +55,17 @@
     <Text Include="encryptedNUDAIM.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="3eNUDAIM.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="4eNUDAIM.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="5eNUDAIM.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="salad.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>
