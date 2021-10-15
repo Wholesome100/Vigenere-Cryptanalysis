@@ -30,7 +30,7 @@ public:
 		string theoKey="";//I can copy the result from the array into here
 	};
 
-	string determineKey(keyGroup keyG);//Has to return a struct
+	string determineKey(keyGroup keyG);
 
 	int findShift(char letter);
 

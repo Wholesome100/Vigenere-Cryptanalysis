@@ -64,7 +64,7 @@ string CryptAnalysis::determineKey(keyGroup keyG)//I could have determine key ta
 
 	string keyStore;
 	//double arrayAlpha[3][29], 
-	double freqStore = 0;
+	double freqStore = 0, partition;
 
 	double** arrayAlpha = new double* [keyG.len];
 	{
@@ -92,11 +92,13 @@ string CryptAnalysis::determineKey(keyGroup keyG)//I could have determine key ta
 		charCount++;
 	}
 
+	partition = (charCount / keyG.len);
+
 	for (int j = 0; j < keyG.len; j++)
 	{
 		for (int i = 0; i < 29; i++)
 		{
-			arrayAlpha[j][i] /= (charCount / keyG.len);
+			arrayAlpha[j][i] /= partition;
 			arrayAlpha[j][i] *= 100;
 			cout << LanguageLetters().refArray[i]<<":" << arrayAlpha[j][i] << "\n";
 		}
@@ -130,6 +132,10 @@ string CryptAnalysis::determineKey(keyGroup keyG)//I could have determine key ta
 	keyStore = tempChar;
 
 	delete[] tempChar;
+	for (int i = 0; i < keyG.len; i++)
+	{
+		delete[] arrayAlpha[i];
+	}
 	delete[] arrayAlpha;
 	
 	return keyStore;

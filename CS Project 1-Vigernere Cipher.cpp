@@ -23,9 +23,40 @@ int main()
 	//VigenereCrypt().vigDecrypt(key);
 	cout << "\nCiphertext written to output.txt";*/
 
-	double fileFrequencies[29];
-	//double errorC;
+	double fileFrequencies[29];	
+	double lowestError=pow(10,100);
+	int winTrack=0;
 
+	CryptAnalysis::keyGroup Winner;
+
+	CryptAnalysis::keyGroup keySets[3];//Array of structs
+	keySets[0].len=3;
+	keySets[1].len=4;
+	keySets[2].len=5;
+
+	VigenereCrypt().stripText("salad.txt");
+
+	for(int i=0;i<3;i++)
+	{
+		keySets[i].theoKey = CryptAnalysis().determineKey(keySets[i]);
+		VigenereCrypt().vigDecrypt(keySets[i].theoKey);
+		CryptAnalysis().findFrequency(fileFrequencies, "output.txt");
+		keySets[i].errorCalc=CryptAnalysis().calculateError(fileFrequencies);
+
+		if(lowestError>= keySets[i].errorCalc)
+		{
+			lowestError = keySets[i].errorCalc;
+			winTrack=i;
+		}
+	}
+
+	Winner=keySets[winTrack];
+
+	//Winner=keySets[2] //Use this when showing salad.txt off
+	
+
+	
+	/*
 	CryptAnalysis:: keyGroup Alpha;
 	Alpha.len = 3;
 
@@ -34,66 +65,32 @@ int main()
 
 	CryptAnalysis::keyGroup Gamma;
 	Gamma.len = 5;
-
-	CryptAnalysis::keyGroup Winner;
+	*/
+	
 
 	//cout << "Testing frequency analysis:\n";
-	VigenereCrypt().stripText("salad.txt");
+	//VigenereCrypt().stripText("5eNUDAIM.txt");
 	//VigenereCrypt().vigEncrypt("TACOS");
 	//VigenereCrypt().vigDecrypt("TQ");
 	//CryptAnalysis().findFrequency(charFrequencies, "output.txt");
 	//errorC=CryptAnalysis().calculateError(charFrequencies);
 
-	/*CryptAnalysis().findFrequency(fileFrequencies, "cleantext.txt");
+
+	cout << "With an error of " << Winner.errorCalc << " the key is most likely " << Winner.theoKey << " of length " << Winner.len<<"\n";
+	VigenereCrypt().vigDecrypt(Winner.theoKey);
+	cout << "Plaintext written to output.txt\n";
+	//cout << Alpha.errorCalc << Beta.errorCalc << Gamma.errorCalc;
+
+	/*
+	CryptAnalysis().findFrequency(fileFrequencies, "cleantext.txt");
 
 	for (int i = 0; i < 29; i++)
 	{
 		cout << LanguageLetters().refArray[i] << ":";
 		cout << fileFrequencies[i] << "\n";
-	}*/
+	}
 	//cout << errorC;
-
-	
-	
-	Alpha.theoKey = CryptAnalysis().determineKey(Alpha);
-	VigenereCrypt().vigDecrypt(Alpha.theoKey);
-	CryptAnalysis().findFrequency(fileFrequencies, "output.txt");
-	Alpha.errorCalc=CryptAnalysis().calculateError(fileFrequencies);
-
-	Beta.theoKey = CryptAnalysis().determineKey(Beta);
-	VigenereCrypt().vigDecrypt(Beta.theoKey);
-	CryptAnalysis().findFrequency(fileFrequencies, "output.txt");
-	Beta.errorCalc = CryptAnalysis().calculateError(fileFrequencies);
-
-	Gamma.theoKey = CryptAnalysis().determineKey(Gamma);
-	VigenereCrypt().vigDecrypt(Gamma.theoKey);
-	CryptAnalysis().findFrequency(fileFrequencies, "output.txt");
-	Gamma.errorCalc = CryptAnalysis().calculateError(fileFrequencies);
-
-	if (Alpha.errorCalc < Beta.errorCalc && Alpha.errorCalc < Gamma.errorCalc)//Something sussy in here
-	{
-		Winner = Alpha;
-	}
-	else if (Beta.errorCalc < Alpha.errorCalc && Beta.errorCalc < Gamma.errorCalc)
-	{
-		Winner = Beta;
-	}
-	else if (Gamma.errorCalc < Alpha.errorCalc && Gamma.errorCalc < Beta.errorCalc)
-	{
-		Winner = Gamma;
-	}
-
-	Winner = Gamma;
-
-
-	cout << "With an error of " << Winner.errorCalc << " the key is most likely " << Winner.theoKey << " of length " << Winner.len<<"\n";
-	VigenereCrypt().vigDecrypt(Winner.theoKey);
-	cout << "Plaintext written to output.txt\n";
-	cout << Alpha.errorCalc << Beta.errorCalc << Gamma.errorCalc;
-
-
-
-	//cout << Alpha.len;
+	*/
 }
 
 
