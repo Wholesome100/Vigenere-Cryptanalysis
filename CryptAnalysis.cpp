@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <cctype>
+#include <cmath>
 
 using namespace std;
 
@@ -50,7 +51,7 @@ double CryptAnalysis::calculateError(double* aFreqarray)
 	}
 
 	errorCalc = sqrt(errorCalc);
-	
+
 	return errorCalc;
 }
 
@@ -63,7 +64,7 @@ string CryptAnalysis::determineKey(keyGroup keyG)//I could have determine key ta
 	tempChar[keyG.len] = '\0';
 
 	string keyStore;
-	//double arrayAlpha[3][29], 
+	//double arrayAlpha[3][29],
 	double freqStore = 0, partition;
 
 	double** arrayAlpha = new double* [keyG.len];
@@ -121,7 +122,7 @@ string CryptAnalysis::determineKey(keyGroup keyG)//I could have determine key ta
 
 		temp = findShift(LanguageLetters().refArray[mostFreq]);//Temp stores the shift value as an integer
 		tempChar[j] = LanguageLetters().refArray[temp];//tempChar stores the shift value as a Char from the refArray
-		
+
 	}
 
 	//keyStore = tempChar;
@@ -137,7 +138,7 @@ string CryptAnalysis::determineKey(keyGroup keyG)//I could have determine key ta
 		delete[] arrayAlpha[i];
 	}
 	delete[] arrayAlpha;
-	
+
 	return keyStore;
 }
 

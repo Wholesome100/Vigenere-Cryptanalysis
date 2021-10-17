@@ -2,6 +2,7 @@
 #include <fstream>
 #include <cctype>
 #include <string>
+#include <cmath>
 
 #include "LanguageLetters.h"
 #include "VigenereCrypt.h"
@@ -23,7 +24,7 @@ int main()
 	//VigenereCrypt().vigDecrypt(key);
 	cout << "\nCiphertext written to output.txt";*/
 
-	double fileFrequencies[29];	
+	double fileFrequencies[29];
 	double lowestError=pow(10,100);
 	int winTrack=0;
 
@@ -53,9 +54,9 @@ int main()
 	Winner=keySets[winTrack];
 
 	//Winner=keySets[2] //Use this when showing salad.txt off
-	
 
-	
+
+
 	/*
 	CryptAnalysis:: keyGroup Alpha;
 	Alpha.len = 3;
@@ -66,7 +67,7 @@ int main()
 	CryptAnalysis::keyGroup Gamma;
 	Gamma.len = 5;
 	*/
-	
+
 
 	//cout << "Testing frequency analysis:\n";
 	//VigenereCrypt().stripText("5eNUDAIM.txt");
