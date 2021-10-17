@@ -101,9 +101,9 @@ string CryptAnalysis::determineKey(keyGroup keyG)//I could have determine key ta
 		{
 			arrayAlpha[j][i] /= partition;
 			arrayAlpha[j][i] *= 100;
-			cout << LanguageLetters().refArray[i]<<":" << arrayAlpha[j][i] << "\n";
+			//cout << LanguageLetters().refArray[i]<<":" << arrayAlpha[j][i] << "\n";
 		}
-		cout << "\n";
+		//cout << "\n";
 	}
 
 	for (int j = 0; j < keyG.len; j++)
@@ -117,8 +117,8 @@ string CryptAnalysis::determineKey(keyGroup keyG)//I could have determine key ta
 				mostFreq = i;
 			}
 		}
-		cout << "Most frequent letter is:" << LanguageLetters().refArray[mostFreq]<<"\n";
-		cout << "Shift between letter and I is:" << findShift(LanguageLetters().refArray[mostFreq])<<"\n";
+		//cout << "Most frequent letter is:" << LanguageLetters().refArray[mostFreq]<<"\n";
+		//cout << "Shift between letter and I is:" << findShift(LanguageLetters().refArray[mostFreq])<<"\n";
 
 		temp = findShift(LanguageLetters().refArray[mostFreq]);//Temp stores the shift value as an integer
 		tempChar[j] = LanguageLetters().refArray[temp];//tempChar stores the shift value as a Char from the refArray
