@@ -24,6 +24,18 @@
     <ClCompile Include="CryptAnalysis.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CryptAnalysisTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DecryptTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LanguageLettersTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="CS Project 1-Vigernere Cipher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -65,6 +77,9 @@
       <Filter>Resource Files</Filter>
     </Text>
     <Text Include="salad.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="etextTest.txt">
       <Filter>Resource Files</Filter>
     </Text>
   </ItemGroup>

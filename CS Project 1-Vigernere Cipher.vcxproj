@@ -140,8 +140,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CryptAnalysis.cpp" />
+    <ClCompile Include="CryptAnalysisTest.cpp" />
     <ClCompile Include="CS Project 1-Vigernere Cipher.cpp" />
+    <ClCompile Include="DecryptTest.cpp" />
+    <ClCompile Include="EncryptTest.cpp" />
     <ClCompile Include="LanguageLetters.cpp" />
+    <ClCompile Include="LanguageLettersTest.cpp" />
     <ClCompile Include="VigenereCrypt.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +159,7 @@
     <Text Include="5eNUDAIM.txt" />
     <Text Include="cleantext.txt" />
     <Text Include="encryptedNUDAIM.txt" />
+    <Text Include="etextTest.txt" />
     <Text Include="nuDAim.txt" />
     <Text Include="output.txt" />
     <Text Include="salad.txt" />
