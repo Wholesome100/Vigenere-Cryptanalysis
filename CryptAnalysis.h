@@ -27,7 +27,7 @@ public:
 	{
 		double errorCalc;
 		int len;
-		string theoKey="";//I can copy the result from the array into here
+		string theoKey;//I can copy the result from the array into here
 	};
 
 	string determineKey(keyGroup keyG);

@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CS Project 1-Vigernere Cipher.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="LanguageLetters.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -25,6 +22,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CryptAnalysis.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CS Project 1-Vigernere Cipher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
