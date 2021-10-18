@@ -7,7 +7,7 @@
 
 using namespace std;
 
-//Strip text cleans the plaintext and places it in cleantext.txt
+//stripText reads in a filename and cleans the contents, placing them in cleantext.txt
 void VigenereCrypt::stripText(string dFile)
 {
 	char c;//Char c holds the current file character
@@ -28,6 +28,7 @@ void VigenereCrypt::stripText(string dFile)
 	clean.close();
 }
 
+//vigEncrypt takes in the key and runs the encryption algorithim on cleantext.txt
 void VigenereCrypt::vigEncrypt(string key)
 {
 	char hold;//hold holds the current file character
@@ -57,7 +58,7 @@ void VigenereCrypt::vigEncrypt(string key)
 	output.close();
 }
 
-
+//vigDecrypt takes in the key and runs the decryption algorithim on cleantext.txt
 void VigenereCrypt::vigDecrypt(string key)
 {
 
