@@ -4,6 +4,7 @@
 #include <string>
 #include <cmath>
 
+
 #include "LanguageLetters.h"
 #include "VigenereCrypt.h"
 #include "CryptAnalysis.h"
@@ -14,20 +15,35 @@ int main()
 	string inputFile, key;//Declare variables
 	int operation, type=0;
 
-	cout << "What is the name and path of your file?\n";//Get the filename and operation the user wants
+	cout << "What is the name of your file?\n";//Get the filename and operation the user wants
 	cin >> inputFile;
-	cout << "Is this encryption or decryption?(1 or 0)\n";
+
+	ifstream test;
+	test.open(inputFile);
+
+	if (!test.is_open())//Guard to check if the file is open
+	{
+		cout << "[Cannot open file]\n";
+		cout << "Was the filename correct (.txt extension included)?\nAre the .txt files in the same directory as the project files?\n";
+		return -1;
+	}
+	else
+	{
+		test.close();
+	}
+
+	cout << "Is this encryption or decryption?[1=encryption or 0=decryption]\n";
 	cin >> operation;
 
 	if(operation > 1 || operation < 0)//If the user doesnt enter 0 or 1, error out
 	{
-	cout << "[Invalid operation]";
-	return -1;
+	cout << "[Invalid operation]\nEnter either 1 to encrypt a file, or 0 to decrypt a file.";
+	return -2;
 	}
 
 	if (operation == 0)//If we're decrypting, check if it's keyless
 	{
-		cout << "Is this keyless decryption?(1=yes or 0=no)\n";
+		cout << "Is this cryptanalytic decryption?[1=yes or 0=no]\n";
 		cin >> type;
 	}
 
@@ -52,7 +68,7 @@ int main()
 			keySets[i].theoKey = CryptAnalysis().determineKey(keySets[i]);//Get the key
 			VigenereCrypt().vigDecrypt(keySets[i].theoKey);//Decrypt using the found key
 			CryptAnalysis().findFrequency(fileFrequencies, "output.txt");//Get the frequencies from the decrypted file
-			keySets[i].errorCalc = CryptAnalysis().calculateError(fileFrequencies);//Get the error between the actual and expeced frequencies
+			keySets[i].errorCalc = CryptAnalysis().calculateError(fileFrequencies);//Get the error between the actual and expected frequencies
 
 			if (lowestError >= keySets[i].errorCalc)//If there is a lower error, set lowestError equal to it and store the index of the struct
 			{

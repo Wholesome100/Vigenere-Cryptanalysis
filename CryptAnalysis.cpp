@@ -32,11 +32,8 @@ void CryptAnalysis::findFrequency(double* afreqArray, string fileName)
 
 	for (int i = 0; i < 29; i++)//Divide the occurences in the freqStore by the total # of characters and multiply by 100 to get the actual frequencies, storing them in the afreqArray
 	{
-		//cout << freqStore[i] << "\n";
 		afreqArray[i] = (freqStore[i] / static_cast<double>(charCount)) * 100;
-		//cout << afreqArray[i]<<"\n";
 	}
-	//cout << charCount;
 
 	input.close();//When done, close the file and delete freqStore
 	delete[] freqStore;
@@ -107,9 +104,7 @@ string CryptAnalysis::determineKey(keyGroup keyG)
 		{
 			arrayAlpha[j][i] /= partition;//Divide the occurences for each group by the partition value
 			arrayAlpha[j][i] *= 100;//Multiply by 100 to get the frequencies
-			//cout << LanguageLetters().refArray[i]<<":" << arrayAlpha[j][i] << "\n";
 		}
-		//cout << "\n";
 	}
 
 	for (int j = 0; j < keyG.len; j++)
@@ -124,12 +119,9 @@ string CryptAnalysis::determineKey(keyGroup keyG)
 				mostFreq = i;
 			}
 		}
-		//cout << "Most frequent letter is:" << LanguageLetters().refArray[mostFreq]<<"\n";
-		//cout << "Shift between letter and A is:" << findShift(LanguageLetters().refArray[mostFreq])<<"\n";
 
 		temp = findShift(LanguageLetters().refArray[mostFreq]);//Temp stores the shift value as an integer
 		tempChar[j] = LanguageLetters().refArray[temp];//tempChar stores the shift value as a Char from the refArray
-
 	}
 
 
