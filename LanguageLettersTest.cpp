@@ -1,4 +1,4 @@
-/*#include <fstream>
+#include <fstream>
 #include <string>
 #include <iostream>
 #include "LanguageLetters.h"
@@ -13,4 +13,4 @@ int main()
 	{	
 		cout << "Letter: " << LanguageLetters().refArray[i] <<" Index: " << LanguageLetters().convertAlpha(LanguageLetters().refArray[i]) << endl;
 	}
-}*/
+}

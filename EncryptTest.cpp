@@ -1,4 +1,4 @@
-/*#include "VigenereCrypt.h"
+#include "VigenereCrypt.h"
 #include "LanguageLetters.h"
 #include <fstream>
 #include <cctype>
@@ -13,4 +13,4 @@ int main()
 	cout << "Cleaned text placed in cleantext.txt" << endl;
 	VigenereCrypt().vigEncrypt("USA");//Encrypts the plaintext inside cleantext.txt using key USA
 	cout << "Text Encrypted using key USA, ciphertext written to output.txt" << endl;
-}*/
+}

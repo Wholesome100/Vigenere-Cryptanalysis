@@ -1,4 +1,4 @@
-/*#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <cctype>
 #include <string>
@@ -43,4 +43,4 @@ int main()
 	cout << "With an error of " << Winner.errorCalc << " the key is most likely " << Winner.theoKey << " of length " << Winner.len << "\n";//Print out data and perform the decryption with the most likely key
 	VigenereCrypt().vigDecrypt(Winner.theoKey);
 	cout << "Plaintext written to output.txt\n";
-}*/
+}

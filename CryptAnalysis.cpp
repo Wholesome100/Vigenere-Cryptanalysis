@@ -144,7 +144,7 @@ string CryptAnalysis::determineKey(keyGroup keyG)
 int CryptAnalysis::findShift(char letter)
 {
 	int shift;
-	shift = ((LanguageLetters().convertAlpha(letter) - LanguageLetters().convertAlpha('A')) + 29) % 29;//Equation to find the key letter as the shift between the most frequent charactr and A
+	shift = ((LanguageLetters().convertAlpha(letter) - LanguageLetters().convertAlpha('A')) + 29) % 29;//Equation to find the key letter as the shift between the most frequent character and A
 	return shift;//Return the shift value of the key letter
 }
 

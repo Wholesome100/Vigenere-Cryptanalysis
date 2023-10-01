@@ -1,4 +1,4 @@
-/*#include "VigenereCrypt.h"
+#include "VigenereCrypt.h"
 #include "LanguageLetters.h"
 #include <fstream>
 #include <cctype>
@@ -16,4 +16,4 @@ int main()
 	cout << "Text decrypted using key USA, plaintext written to output.txt" << endl;
 
 
-}*/
+}
